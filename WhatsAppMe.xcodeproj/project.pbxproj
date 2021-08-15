@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		792B650126C8FEEC003A310A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B650026C8FEEC003A310A /* String.swift */; };
 		79D2642526C866F000A34894 /* WhatsAppMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D2642426C866F000A34894 /* WhatsAppMeApp.swift */; };
 		79D2642726C866F000A34894 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D2642626C866F000A34894 /* ContentView.swift */; };
 		79D2642926C866F100A34894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79D2642826C866F100A34894 /* Assets.xcassets */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		792B64FF26C8FD98003A310A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		792B650026C8FEEC003A310A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		79D2642126C866F000A34894 /* WhatsAppMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D2642426C866F000A34894 /* WhatsAppMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppMeApp.swift; sourceTree = "<group>"; };
 		79D2642626C866F000A34894 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,9 +109,11 @@
 		79D2642326C866F000A34894 /* WhatsAppMe */ = {
 			isa = PBXGroup;
 			children = (
+				792B64FF26C8FD98003A310A /* Info.plist */,
 				79D2642426C866F000A34894 /* WhatsAppMeApp.swift */,
 				79D2642626C866F000A34894 /* ContentView.swift */,
 				79EDEDBB26C871350054B2B9 /* AddPhoneNumber.swift */,
+				792B650026C8FEEC003A310A /* String.swift */,
 				79E62B6726C87905001760BD /* Colors.swift */,
 				79D2642826C866F100A34894 /* Assets.xcassets */,
 				79D2642D26C866F100A34894 /* Persistence.swift */,
@@ -279,6 +284,7 @@
 				79D2642E26C866F100A34894 /* Persistence.swift in Sources */,
 				79E62B6826C87905001760BD /* Colors.swift in Sources */,
 				79D2643126C866F100A34894 /* WhatsAppMe.xcdatamodeld in Sources */,
+				792B650126C8FEEC003A310A /* String.swift in Sources */,
 				79D2642726C866F000A34894 /* ContentView.swift in Sources */,
 				79EDEDBC26C871350054B2B9 /* AddPhoneNumber.swift in Sources */,
 				79EDEDB826C870810054B2B9 /* Bundle.swift in Sources */,
@@ -446,6 +452,10 @@
 				DEVELOPMENT_TEAM = 66D53J4F95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatsAppMe/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = WhatsAppMe;
+				INFOPLIST_KEY_CFBundleName = WhatsAppMe;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -476,6 +486,10 @@
 				DEVELOPMENT_TEAM = 66D53J4F95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatsAppMe/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = WhatsAppMe;
+				INFOPLIST_KEY_CFBundleName = WhatsAppMe;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

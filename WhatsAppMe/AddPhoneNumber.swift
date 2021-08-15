@@ -24,6 +24,7 @@ struct AddPhoneNumberView: View {
 			phoneNumberTextField
 				.padding(.top, 30)
 			Spacer()
+			sendButton
 		}
 		.padding(.horizontal)
 		.navigationBarTitleDisplayMode(.inline)
@@ -55,6 +56,30 @@ struct AddPhoneNumberView: View {
 		.frame(height: 60)
 		.background(Color.suraasaAluminium)
 		.cornerRadius(10)
+	}
+	
+	private var sendButton: some View {
+		Button(action: {
+			let urlWhats = "whatsapp://send?phone=+\(phoneNumber.code.code)\(phoneNumber.number)&abid=12354&text=Hey"
+			if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) {
+				if let whatsappURL = URL(string: urlString) {
+					if UIApplication.shared.canOpenURL(whatsappURL) {
+						UIApplication.shared.open(whatsappURL, options: [:])
+					} else {
+						print("Install Whatsapp")
+					}
+				}
+			}
+		}) {
+			Text("Send")
+				.font(.headline)
+				.foregroundColor(.suraasaWhite)
+				.frame(maxWidth: .infinity, maxHeight: 60)
+				.background(phoneNumber.number.isNumber ? Color.suraasaBlue : Color.suraasaBlack20)
+				.cornerRadius(10)
+		}
+		.padding(.bottom)
+		.disabled(!phoneNumber.number.isNumber)
 	}
 }
 
@@ -124,7 +149,7 @@ extension AddPhoneNumberView {
 		}
 		
 		func validate(number: String) {
-			isValid = (NSPredicate(format: "SELF MATCHES %@", "^[0-9]{8,12}$").evaluate(with: number) || number.isEmpty)
+			isValid = (number.isNumber || number.isEmpty)
 		}
 		
 		var searchResults: [Country] {
