@@ -9,6 +9,8 @@ import SwiftUI
 import Combine
 
 struct AddPhoneNumberView: View {
+	@Environment(\.presentationMode) var presentationMode
+	@Environment(\.managedObjectContext) private var viewContext
 	@StateObject var phoneNumber: PhoneNumberObserver = PhoneNumberObserver(countries: Bundle.main.decode([Country].self, from: "CountryData.json").sorted { $0.name < $1.name })
 	
 	@State private var selectCountry: Bool = false
@@ -60,11 +62,13 @@ struct AddPhoneNumberView: View {
 	
 	private var sendButton: some View {
 		Button(action: {
+			save(number: phoneNumber.number, internationCode: phoneNumber.code.code)
 			let urlWhats = "whatsapp://send?phone=+\(phoneNumber.code.code)\(phoneNumber.number)&abid=12354&text=Hey"
 			if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) {
 				if let whatsappURL = URL(string: urlString) {
 					if UIApplication.shared.canOpenURL(whatsappURL) {
 						UIApplication.shared.open(whatsappURL, options: [:])
+						presentationMode.wrappedValue.dismiss()
 					} else {
 						print("Install Whatsapp")
 					}
@@ -80,6 +84,26 @@ struct AddPhoneNumberView: View {
 		}
 		.padding(.bottom)
 		.disabled(!phoneNumber.number.isNumber)
+	}
+}
+
+extension AddPhoneNumberView {
+	private func save(number: String, internationCode code: String) {
+		withAnimation {
+			let newItem = Item(context: viewContext)
+			newItem.timestamp = Date()
+			newItem.number = number
+			newItem.code = code
+			
+			do {
+				try viewContext.save()
+			} catch {
+				// Replace this implementation with code to handle the error appropriately.
+				// fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+				let nsError = error as NSError
+				fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+			}
+		}
 	}
 }
 
