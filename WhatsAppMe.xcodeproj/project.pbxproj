@@ -86,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		792B650226C90018003A310A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				792B650026C8FEEC003A310A /* String.swift */,
+				79E62B6726C87905001760BD /* Colors.swift */,
+				79EDEDB726C870810054B2B9 /* Bundle.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		79D2641826C866F000A34894 = {
 			isa = PBXGroup;
 			children = (
@@ -109,17 +119,15 @@
 		79D2642326C866F000A34894 /* WhatsAppMe */ = {
 			isa = PBXGroup;
 			children = (
-				792B64FF26C8FD98003A310A /* Info.plist */,
+				792B650226C90018003A310A /* Extensions */,
 				79D2642426C866F000A34894 /* WhatsAppMeApp.swift */,
 				79D2642626C866F000A34894 /* ContentView.swift */,
 				79EDEDBB26C871350054B2B9 /* AddPhoneNumber.swift */,
-				792B650026C8FEEC003A310A /* String.swift */,
-				79E62B6726C87905001760BD /* Colors.swift */,
-				79D2642826C866F100A34894 /* Assets.xcassets */,
 				79D2642D26C866F100A34894 /* Persistence.swift */,
 				79EDEDB926C870BA0054B2B9 /* Country.swift */,
-				79EDEDB726C870810054B2B9 /* Bundle.swift */,
 				79EDEDB526C870390054B2B9 /* CountryData.json */,
+				792B64FF26C8FD98003A310A /* Info.plist */,
+				79D2642826C866F100A34894 /* Assets.xcassets */,
 				79D2642F26C866F100A34894 /* WhatsAppMe.xcdatamodeld */,
 				79D2642A26C866F100A34894 /* Preview Content */,
 			);
